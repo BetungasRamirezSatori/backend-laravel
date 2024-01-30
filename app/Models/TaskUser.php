@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class TaskUser extends Pivot
 {
-    use HasFactory;
-
     protected $fillable = [
         'due_date',
         'user_id',
@@ -17,4 +14,8 @@ class TaskUser extends Pivot
         'state_id'
     ];
 
+    public function state(): BelongsTo
+    {
+        return $this->belongsTo(State::class);
+    }
 }
