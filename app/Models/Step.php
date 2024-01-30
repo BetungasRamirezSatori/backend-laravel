@@ -25,8 +25,10 @@ class Step extends Model
     {
         return $this->belongsTo(Task::class);
     }
-    public function State(): BelongsTo
-    {
-        return $this->belongsTo(State::class);
-    }
+
+    // public function State(): BelongsTo
+    // {
+    //     return $this->belongsTo(State::class);
+    // }
+
 }

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class State extends Model
 {
     use HasFactory;
+
     protected $fillable = ['name'];
     public $timestamps = false;
 
@@ -16,7 +17,13 @@ class State extends Model
     {
         return $this->hasMany(Todo::class);
     }
-    public function taskUser(): HasMany
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function taskUser()
     {
         return $this->hasMany(TaskUser::class);
     }
