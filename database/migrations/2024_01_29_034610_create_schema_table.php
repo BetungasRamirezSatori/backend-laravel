@@ -12,7 +12,7 @@ class CreateSchemaTable extends Migration
 {
     private const statuses = [
         'createFlag' => true,
-        'downFlag' => true,
+        'downFlag' => true
     ];
 
     private const tables = [
@@ -23,7 +23,7 @@ class CreateSchemaTable extends Migration
             'Users',
             'Todos',
             'Tasks',
-            'Steps',
+            'Steps'
         ],
         'Pivot' => [
             'TaskUser',
@@ -33,7 +33,6 @@ class CreateSchemaTable extends Migration
     private static function pascalToSnake(string $tableName): string
     {
         return strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $tableName));
-//        return str_replace('_', '', ucwords('role_user', '_'));
     }
 
     public function up(): void

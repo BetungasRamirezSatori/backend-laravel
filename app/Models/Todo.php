@@ -22,6 +22,11 @@ class Todo extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function state(): BelongsTo
+    {
+        return $this->belongsTo(State::class);
+    }
+
     public function tasks(): HasMany
     {
         return $this->hasMany(Task::class);

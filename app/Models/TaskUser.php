@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class TaskUser extends Pivot
 {
+    public $incrementing = true;
     protected $fillable = [
         'due_date',
         'user_id',

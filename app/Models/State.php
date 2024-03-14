@@ -18,12 +18,12 @@ class State extends Model
         return $this->hasMany(Todo::class);
     }
 
-    public function tasks()
+    public function tasks(): HasMany
     {
         return $this->hasMany(Task::class);
     }
 
-    public function taskUser()
+    public function taskUser(): HasMany
     {
         return $this->hasMany(TaskUser::class);
     }
